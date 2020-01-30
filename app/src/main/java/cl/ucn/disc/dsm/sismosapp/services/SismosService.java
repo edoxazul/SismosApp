@@ -16,14 +16,12 @@
 
 package cl.ucn.disc.dsm.sismosapp.services;
 
-import cl.ucn.disc.dsm.sismosapp.model.Data;
 import cl.ucn.disc.dsm.sismosapp.model.Sismo;
-import cl.ucn.disc.dsm.sismosapp.services.sismosapi.Metadata;
-import retrofit2.Call;
+import java.util.List;
 
 public interface SismosService {
 
 
-Call<Data> getLimit(final int limit);
+List<Sismo> getSismos();
 
 }
