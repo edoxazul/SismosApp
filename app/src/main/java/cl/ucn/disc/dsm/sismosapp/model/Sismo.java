@@ -74,21 +74,22 @@ public class Sismo {
 
   /**
    * The constructor.
-   * @param state
-   * @param utcTime
-   * @param localTime
-   * @param chileanTime
-   * @param reference
-   * @param magnitude
-   * @param scale
-   * @param latitude
-   * @param longitude
-   * @param depth
-   * @param id
-   * @param url
-   * @param source
+   *
+   * @param state       ,the state.
+   * @param utcTime     ,the utc time of the quake.
+   * @param localTime   ,the localTime of the quake.
+   * @param chileanTime ,the chilean Time of the quake.
+   * @param reference   ,the reference.
+   * @param magnitude   ,the magnitude of the quake.
+   * @param scale       ,the scale of the quake.
+   * @param latitude    ,the latitude of the quake.
+   * @param longitude   ,the longitude of the quake.
+   * @param depth       ,the depth of the quake.
+   * @param id          ,the id of the quake.
+   * @param url         ,the url of the quake.
+   * @param source      ,the source of the quake.
    */
-  public Sismo (Integer state, String utcTime, String localTime, String chileanTime,
+  public Sismo(Integer state, String utcTime, String localTime, String chileanTime,
       String reference, Float magnitude, String scale, Float latitude, Float longitude,
       Float depth, String id, String url, String source) {
     this.state = state;
@@ -106,55 +107,108 @@ public class Sismo {
     this.source = source;
   }
 
-  public Integer getState ( ) {
+
+  /**
+   * Get the State.
+   * @return The State.
+   */
+  public Integer getState() {
     return state;
   }
 
-  public String getUtcTime ( ) {
+  /**
+   *Get the UTC time.
+   * @return UTC time.
+   */
+  public String getUtcTime() {
     return utcTime;
   }
 
-  public String getLocalTime ( ) {
+  /**
+   * Get the local Time.
+   * @return local time.
+   */
+  public String getLocalTime() {
     return localTime;
   }
 
-  public String getChileanTime ( ) {
+  /**
+   * Get the Chilean time.
+   * @return Chilean time.
+   */
+  public String getChileanTime() {
     return chileanTime;
   }
 
-  public String getReference ( ) {
+  /**
+   * Get the reference.
+   * @return the reference.
+   */
+  public String getReference() {
     return reference;
   }
 
-  public Float getMagnitude ( ) {
+  /**
+   * Get the magnitude.
+   * @return the magnitude.
+   */
+  public Float getMagnitude() {
     return magnitude;
   }
 
-  public String getScale ( ) {
+  /**
+   * Get the Scale.
+   * @return the scale.
+   */
+  public String getScale() {
     return scale;
   }
 
-  public Float getLatitude ( ) {
+  /**
+   * Get the latitude.
+   * @return the latitude.
+   */
+  public Float getLatitude() {
     return latitude;
   }
 
-  public Float getLongitude ( ) {
+  /**
+   * Get the longitude.
+   * @return the longitude.
+   */
+  public Float getLongitude() {
     return longitude;
   }
 
-  public Float getDepth ( ) {
+  /**
+   * Get the Depth.
+   * @return the depth.
+   */
+  public Float getDepth() {
     return depth;
   }
 
-  public String getId ( ) {
+  /**
+   * Get the id.
+   * @return the id.
+   */
+  public String getId() {
     return id;
   }
 
-  public String getUrl ( ) {
+  /**
+   * Get the url.
+   * @return the url.
+   */
+  public String getUrl() {
     return url;
   }
 
-  public String getSource ( ) {
+  /**
+   * Get the Source.
+   * @return the source.
+   */
+  public String getSource() {
     return source;
   }
 }
