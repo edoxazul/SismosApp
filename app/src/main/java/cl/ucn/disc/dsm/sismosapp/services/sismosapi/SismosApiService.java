@@ -16,11 +16,11 @@
 
 package cl.ucn.disc.dsm.sismosapp.services.sismosapi;
 
-import cl.ucn.disc.dsm.sismosapp.model.Data;
+import cl.ucn.disc.dsm.sismosapp.model.Sismo;
 import cl.ucn.disc.dsm.sismosapp.services.SismosService;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 import okhttp3.OkHttpClient;
 import okhttp3.OkHttpClient.Builder;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -67,11 +67,11 @@ public final class SismosApiService implements SismosService {
         .client(httpClient)
         // Build the Retrofit ..
         .build()
-        // .. get the NewsApi.
+        // .. get the ChileAlerta api.
         .create(SismosApi.class);
   }
 
-  private Call<Data> getSismosFromCall (Call<SismosApiResult> theCall) {
+  private List<Sismo> getSismosFromCall (Call<SismosApiResult> theCall) {
 
     try {
 
@@ -83,7 +83,7 @@ public final class SismosApiService implements SismosService {
 
         // Error!
         throw new sismosApiException(
-            "Can't get the NewsResult, code: " + response.code(),
+            "Can't get the SismosResult, code: " + response.code(),
             new HttpException(response)
         );
 
@@ -96,8 +96,7 @@ public final class SismosApiService implements SismosService {
         throw new sismosApiException("SismosResult was null");
       }
 
-      return (Call<Data>) theResult.ultimosSismosChile.stream()
-          .collect(Collectors.toList());
+      return theResult.ultimosSismosChile;
 
 
     } catch (final IOException ex) {
@@ -124,12 +123,12 @@ public final class SismosApiService implements SismosService {
   }
 
   @Override
-  public Call<Data> getLimit (final int limit) {
+  public List<Sismo> getSismos() {
 
     String select = Select.ultimos_sismos.toString();
     String country = Country.chile.toString();
 
-    final Call<SismosApiResult> theCall = this.sismosApi.getUltimosSismos(select, country, limit);
+    final Call<SismosApiResult> theCall = this.sismosApi.getUltimosSismos(select, country);
 
     return getSismosFromCall(theCall);
   }

@@ -16,12 +16,13 @@
 
 package cl.ucn.disc.dsm.sismosapp.services.sismosapi;
 
+import cl.ucn.disc.dsm.sismosapp.model.Sismo;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SismosApiResult {
 
   public Metadata metadata;
-  public List<UltimosSismosChile> ultimosSismosChile = new ArrayList<>();
+  public List<Sismo> ultimosSismosChile = new ArrayList<>();
 
 }

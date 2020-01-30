@@ -23,15 +23,12 @@ import retrofit2.http.Query;
 
 public interface SismosApi {
 
-  String BASE_URL= "https://chilealerta.com/api/query/";
+  String BASE_URL= "https://chilealerta.com/api/query/?user=edoxazul&select=ultimos_sismos";
 
-  String user = "edoxazul";
-
-  @Headers({"user :" + user})
+  @GET(BASE_URL)
   Call<SismosApiResult> getUltimosSismos (
       @Query("select") final String ultimos_sismos,
-      @Query("country") final String country,
-      @Query("limit") final int limit);
+      @Query("country") final String country);
 
 
 }
