@@ -44,14 +44,28 @@ public class SismoViewHolder extends RecyclerView.ViewHolder {
    */
   public void bind(final Sismo sismo) {
 
+    String latitude = String.valueOf(sismo.getLatitude());
+    String longitude = String.valueOf(sismo.getLongitude());
+    String scale = String.valueOf(sismo.getScale());
+    String source = String.valueOf(sismo.getSource());
+    String timeutc = String.valueOf(sismo.getUtcTime());
+
+
+
+
+
     this.binding.tvMagnitude.setText(String.valueOf(sismo.getMagnitude()));
     this.binding.tvReference.setText(sismo.getReference());
-    this.binding.tvLatitude.setText(String.valueOf(sismo.getLatitude()));
-    this.binding.tvLongitude.setText(String.valueOf(sismo.getLongitude()));
-    this.binding.tvScale.setText(sismo.getScale());
-    this.binding.tvSource.setText(sismo.getSource());
-    this.binding.tvUrl.setText(sismo.getUrl());
-    this.binding.tvChileanDate.setText(sismo.getChileanTime());
+    this.binding.tvLatitude.setText(
+        new StringBuilder().append("Latitude : ").append(latitude).toString());
+    this.binding.tvLongitude.setText(new StringBuilder().append("Longitude : ")
+        .append(longitude).toString());
+    this.binding.tvScale.setText(new StringBuilder().append("Scale : ")
+        .append(scale).toString());
+    this.binding.tvSource.setText(new StringBuilder().append("Source : ")
+        .append(source).toString());
+    this.binding.tvChileanDate.setText(new StringBuilder().append("Time UTC : ")
+        .append(timeutc).toString());
 
   }
 
