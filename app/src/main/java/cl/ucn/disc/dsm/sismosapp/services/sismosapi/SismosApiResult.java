@@ -27,6 +27,6 @@ import java.util.List;
 public class SismosApiResult {
 
   public Metadata metadata;
-  public List<Sismo> ultimosSismosChile = new ArrayList<>();
+  public List<Sismo> ultimos_sismos = new ArrayList<>();
 
 }

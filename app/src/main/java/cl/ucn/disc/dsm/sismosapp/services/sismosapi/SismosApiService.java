@@ -114,9 +114,7 @@ public final class SismosApiService implements SismosService {
         throw new SismosApiException("SismosResult was null");
       }
 
-      return theResult.ultimosSismosChile.stream()
-          .map(SingletonSismos::getSismo)
-          .collect(Collectors.toList());
+      return theResult.ultimos_sismos;
 
 
     } catch (final IOException ex) {
@@ -149,28 +147,27 @@ public final class SismosApiService implements SismosService {
   @Override
   public List<Sismo> getSismos(final int limit) {
 
-    String select = Select.ultimos_sismos.toString();
-    String country = Country.Chile.toString();
+    //String select = Select.ultimos_sismos.toString();
+    //String country = Country.Chile.toString();
 
-    final Call<SismosApiResult> theCall = this.sismosApi.getUltimosSismos(select,limit, country);
+    final Call<SismosApiResult> theCall = this.sismosApi.getUltimosSismos("ultimos_sismos");
 
     return getSismosFromCall(theCall);
   }
-
-  /**
-   * The Country.
-   */
-  public enum Country {
-    Chile
-  }
-
-  /**
-   * The Select.
-   */
-
-  public enum Select {
-    ultimos_sismos
-  }
+  //  /**
+  //   * The Country.
+  //   */
+  //  public enum Country {
+  //    Chile
+  //  }
+  //
+  //  /**
+  //   * The Select.
+  //   */
+  //
+  //  public enum Select {
+  //    ultimos_sismos
+  //  }
 
 
 }

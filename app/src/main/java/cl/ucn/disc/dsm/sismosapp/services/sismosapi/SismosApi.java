@@ -20,18 +20,17 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
+/**
+ * The Sismos Api.
+ */
+
 public interface SismosApi {
 
-  String BASE_URL = "https://chilealerta.com/api/query/?user=edoxazul";
+  String BASE_URL = "https://chilealerta.com/api/query/";
 
-  @GET(BASE_URL)
+  @GET("?user=edoxazul")
   Call<SismosApiResult> getUltimosSismos(
-      @Query("select") final String ultimos_sismos,
-      @Query("limit") final int limit,
-      @Query("country") final String country);
-
-
-
+      @Query("select") final String select);
 
 
 }

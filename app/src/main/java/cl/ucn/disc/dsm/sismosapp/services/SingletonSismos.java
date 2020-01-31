@@ -20,7 +20,7 @@ import cl.ucn.disc.dsm.sismosapp.model.Sismo;
 
 public class SingletonSismos {
 
-  private static Sismo sismo;
+  private static Sismo ultimos_sismos;
 
 
   private SingletonSismos(){
@@ -28,7 +28,13 @@ public class SingletonSismos {
 
   }
 
-  public static Sismo getSismo(final Sismo sismo) {
+  /**
+   * The Get Ultimos Sismos.
+   * @param sismo , for sismos.
+   * @return Sismo.
+   */
+
+  public static Sismo getUltimos_sismos(final Sismo sismo) {
 
 
     return new Sismo(
