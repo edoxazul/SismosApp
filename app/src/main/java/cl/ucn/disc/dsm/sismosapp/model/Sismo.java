@@ -21,7 +21,7 @@ public class Sismo {
   /**
    * The State.
    */
-  private Integer state;
+  public Integer state;
   /**
    * The UTC Time.
    */
