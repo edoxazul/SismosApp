@@ -44,11 +44,11 @@ public class SismoViewHolder extends RecyclerView.ViewHolder {
    */
   public void bind(final Sismo sismo) {
 
-    String latitude = String.valueOf(sismo.getLatitude());
-    String longitude = String.valueOf(sismo.getLongitude());
-    String scale = String.valueOf(sismo.getScale());
-    String source = String.valueOf(sismo.getSource());
-    String timeutc = String.valueOf(sismo.getUtcTime());
+    final String latitude = String.valueOf(sismo.getLatitude());
+    final String longitude = String.valueOf(sismo.getLongitude());
+    final String scale = String.valueOf(sismo.getScale());
+    final String source = String.valueOf(sismo.getSource());
+    final String timeutc = String.valueOf(sismo.getUtcTime());
 
 
 
