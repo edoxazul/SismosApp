@@ -19,7 +19,7 @@ Project created with the purpose of learn how to create a android app, using an 
 (https://github.com/TBMSP/ChileAlertaApi)and practice our codding skills.
 
 ## Screenshots
-![Screenshot](./img/Image1.png)
+![Screenshot](./img/sismoapp.png)
 
 ## Features
 Night Mode 🌗
