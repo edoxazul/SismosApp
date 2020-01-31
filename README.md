@@ -1,6 +1,11 @@
 # SismosApp
 > App to obtain earthquake information 
 
+
+## Student Name 
+ Eduardo Alvarez S.
+
+
 ## Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
