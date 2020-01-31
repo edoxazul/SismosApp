@@ -17,10 +17,12 @@
 package cl.ucn.disc.dsm.sismosapp.services.sismosapi;
 
 import cl.ucn.disc.dsm.sismosapp.model.Sismo;
+import cl.ucn.disc.dsm.sismosapp.services.SingletonSismos;
 import cl.ucn.disc.dsm.sismosapp.services.SismosService;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 import okhttp3.OkHttpClient;
 import okhttp3.OkHttpClient.Builder;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -112,7 +114,9 @@ public final class SismosApiService implements SismosService {
         throw new SismosApiException("SismosResult was null");
       }
 
-      return theResult.ultimosSismosChile;
+      return theResult.ultimosSismosChile.stream()
+          .map(SingletonSismos::getSismo)
+          .collect(Collectors.toList());
 
 
     } catch (final IOException ex) {
@@ -143,12 +147,12 @@ public final class SismosApiService implements SismosService {
    * @return the {@link List} of {@link Sismo}.
    */
   @Override
-  public List<Sismo> getSismos() {
+  public List<Sismo> getSismos(final int limit) {
 
     String select = Select.ultimos_sismos.toString();
-    String country = Country.chile.toString();
+    String country = Country.Chile.toString();
 
-    final Call<SismosApiResult> theCall = this.sismosApi.getUltimosSismos(select, country);
+    final Call<SismosApiResult> theCall = this.sismosApi.getUltimosSismos(select,limit, country);
 
     return getSismosFromCall(theCall);
   }
@@ -157,7 +161,7 @@ public final class SismosApiService implements SismosService {
    * The Country.
    */
   public enum Country {
-    chile
+    Chile
   }
 
   /**

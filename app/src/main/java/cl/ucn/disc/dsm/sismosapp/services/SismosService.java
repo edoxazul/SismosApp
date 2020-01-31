@@ -33,6 +33,6 @@ public interface SismosService {
    * @return the {@link List} of {@link Sismo}.
    */
 
-  List<Sismo> getSismos();
+  List<Sismo> getSismos(final int limit);
 
 }

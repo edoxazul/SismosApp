@@ -16,21 +16,35 @@
 
 package cl.ucn.disc.dsm.sismosapp.services;
 
-import cl.ucn.disc.dsm.sismosapp.services.sismosapi.SismosApi;
-import com.squareup.okhttp.OkHttpClient;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import cl.ucn.disc.dsm.sismosapp.model.Sismo;
 
 public class SingletonSismos {
 
-  private static SismosApi REST_CLIENT;
+  private static Sismo sismo;
 
 
   private SingletonSismos(){
+
+
   }
 
-  public static SismosApi get() {
-    return REST_CLIENT;
+  public static Sismo getSismo(final Sismo sismo) {
+
+
+    return new Sismo(
+        sismo.state,
+        sismo.utcTime,
+        sismo.localTime,
+        sismo.chileanTime,
+        sismo.reference,
+        sismo.magnitude,
+        sismo.scale,
+        sismo.latitude,
+        sismo.longitude,
+        sismo.depth,
+        sismo.id,
+        sismo.url,
+        sismo.source);
   }
 
 

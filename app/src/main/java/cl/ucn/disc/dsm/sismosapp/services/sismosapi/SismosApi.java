@@ -27,7 +27,11 @@ public interface SismosApi {
   @GET(BASE_URL)
   Call<SismosApiResult> getUltimosSismos(
       @Query("select") final String ultimos_sismos,
+      @Query("limit") final int limit,
       @Query("country") final String country);
+
+
+
 
 
 }
