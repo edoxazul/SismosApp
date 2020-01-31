@@ -33,6 +33,10 @@ public class SismoViewModel extends ViewModel {
    */
   private static final Logger log = LoggerFactory.getLogger(SismoViewModel.class);
 
+  /**
+   * The Size.
+   */
+  private static final int LIMIT = 25;
 
   /**
    * The {@link List} of {@link Sismo} to provide.
@@ -81,7 +85,7 @@ public class SismoViewModel extends ViewModel {
     try {
 
       // 1. Get the list of Sismos from ChileAlertaApi
-      final List<Sismo> sismos = this.sismosService.getSismos();
+      final List<Sismo> sismos = this.sismosService.getSismos(LIMIT);
 
       // 2. Set the values (NEED to be in background)
       this.theSismos.postValue(sismos);
