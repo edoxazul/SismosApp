@@ -29,7 +29,7 @@ public class SingletonSismos {
   private SingletonSismos(){
   }
 
-  public static SismosApi get(){
+  public static SismosApi get() {
     return REST_CLIENT;
   }
 
