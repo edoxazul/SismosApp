@@ -18,15 +18,14 @@ package cl.ucn.disc.dsm.sismosapp.services.sismosapi;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
 import retrofit2.http.Query;
 
 public interface SismosApi {
 
-  String BASE_URL= "https://chilealerta.com/api/query/?user=edoxazul&select=ultimos_sismos";
+  String BASE_URL = "https://chilealerta.com/api/query/?user=edoxazul";
 
   @GET(BASE_URL)
-  Call<SismosApiResult> getUltimosSismos (
+  Call<SismosApiResult> getUltimosSismos(
       @Query("select") final String ultimos_sismos,
       @Query("country") final String country);
 
