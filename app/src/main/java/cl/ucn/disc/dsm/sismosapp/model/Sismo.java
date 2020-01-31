@@ -61,7 +61,7 @@ public class Sismo {
   /**
    * The id.
    */
-  public String id;
+  public Long id;
   /**
    * The url.
    */
@@ -91,7 +91,7 @@ public class Sismo {
    */
   public Sismo(Integer state, String utcTime, String localTime, String chileanTime,
       String reference, Float magnitude, String scale, Float latitude, Float longitude,
-      Float depth, String id, String url, String source) {
+      Float depth, Long id, String url, String source) {
     this.state = state;
     this.utcTime = utcTime;
     this.localTime = localTime;
@@ -192,7 +192,7 @@ public class Sismo {
    * Get the id.
    * @return the id.
    */
-  public String getId() {
+  public Long getId() {
     return id;
   }
 
