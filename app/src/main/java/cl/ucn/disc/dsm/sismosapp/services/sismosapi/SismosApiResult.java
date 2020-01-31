@@ -20,6 +20,10 @@ import cl.ucn.disc.dsm.sismosapp.model.Sismo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The SismosApiResult class.
+ * @author Eduardo Alvarez S.
+ */
 public class SismosApiResult {
 
   public Metadata metadata;

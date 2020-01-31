@@ -19,8 +19,19 @@ package cl.ucn.disc.dsm.sismosapp.services;
 import cl.ucn.disc.dsm.sismosapp.model.Sismo;
 import java.util.List;
 
+
+/**
+ * The Service Class
+ *
+ * @author Eduardo Alvarez S.
+ */
 public interface SismosService {
 
+
+  /**
+   * Get the Sismos from the Backend.
+   * @return the {@link List} of {@link Sismo}.
+   */
 
 List<Sismo> getSismos();
 

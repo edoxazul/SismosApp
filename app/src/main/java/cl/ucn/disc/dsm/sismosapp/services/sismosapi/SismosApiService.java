@@ -35,16 +35,25 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public final class SismosApiService implements SismosService {
 
+  /**
+   * The Logger.
+   */
   private static final Logger log = LoggerFactory.getLogger(SismosApiService.class);
 
 
+  /**
+   * The SismosApi.
+   */
   private final SismosApi sismosApi;
 
-  public SismosApiService ( ) {
+  /**
+   * The Constructor.
+   */
+  public SismosApiService() {
 
     // Logging with slf4j
     final HttpLoggingInterceptor loggingInterceptor =
-        new HttpLoggingInterceptor(log :: debug).setLevel(Level.BODY);
+        new HttpLoggingInterceptor(log:: debug).setLevel(Level.BODY);
 
     // Web Client
     final OkHttpClient httpClient = new Builder()
@@ -71,7 +80,14 @@ public final class SismosApiService implements SismosService {
         .create(SismosApi.class);
   }
 
-  private List<Sismo> getSismosFromCall (Call<SismosApiResult> theCall) {
+
+  /**
+   *  Get the Sismos from the Call.
+   *
+   * @param theCall to use.
+   * @return the {@link List} of {@link Sismo}.
+   */
+  private List<Sismo> getSismosFromCall(Call<SismosApiResult> theCall) {
 
     try {
 
@@ -82,7 +98,7 @@ public final class SismosApiService implements SismosService {
       if (!response.isSuccessful()) {
 
         // Error!
-        throw new sismosApiException(
+        throw new SismosApiException(
             "Can't get the SismosResult, code: " + response.code(),
             new HttpException(response)
         );
@@ -93,14 +109,14 @@ public final class SismosApiService implements SismosService {
 
       // No body
       if (theResult == null) {
-        throw new sismosApiException("SismosResult was null");
+        throw new SismosApiException("SismosResult was null");
       }
 
       return theResult.ultimosSismosChile;
 
 
     } catch (final IOException ex) {
-      throw new sismosApiException("Can't get the SismosResult", ex);
+      throw new SismosApiException("Can't get the SismosResult", ex);
     }
 
 
@@ -110,18 +126,22 @@ public final class SismosApiService implements SismosService {
   /**
    * The Exception.
    */
-  public static final class sismosApiException extends RuntimeException {
+  public static final class SismosApiException extends RuntimeException {
 
-    public sismosApiException (final String message) {
+    public SismosApiException(final String message) {
       super(message);
     }
 
-    public sismosApiException (final String message, final Throwable cause) {
+    public SismosApiException(final String message, final Throwable cause) {
       super(message, cause);
     }
 
   }
 
+  /**
+   * The getSismos.
+   * @return the {@link List} of {@link Sismo}.
+   */
   @Override
   public List<Sismo> getSismos() {
 
@@ -133,9 +153,16 @@ public final class SismosApiService implements SismosService {
     return getSismosFromCall(theCall);
   }
 
+  /**
+   * The Country.
+   */
   public enum Country {
     chile
   }
+
+  /**
+   * The Select.
+   */
 
   public enum Select {
     ultimos_sismos
