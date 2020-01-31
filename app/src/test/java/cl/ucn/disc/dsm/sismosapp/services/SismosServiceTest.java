@@ -38,7 +38,7 @@ public class SismosServiceTest {
 public void testGetSismosApi(){
 
 
-    log.debug("Testing the SismosApiService, requesting {} Sismos.");
+    log.debug("Testing the SismosApiService, requesting Sismos.");
 
   // The Sismos service.
   final SismosService sismosService = new SismosApiService();
@@ -47,8 +47,10 @@ public void testGetSismosApi(){
   final List<Sismo> sismos = sismosService.getSismos();
 
     Assertions.assertNotNull(sismos);
-    for (final Sismo noticia : sismos) {
-    log.debug("Noticia: {}.", sismos);
+    //Assertions.assertEquals(sismos.size(), size, "Error de tamanio");
+
+    for (final Sismo sismo : sismos) {
+    log.debug("Sismo: {}.", sismo);
   }
 
     log.debug("Done.");

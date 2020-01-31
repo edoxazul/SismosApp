@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">SismosApp</string>
+  <string name="title">Sismos App</string>
+  <string name="subtitle">Sismos from ChileAlertaApi</string>
 </resources>
