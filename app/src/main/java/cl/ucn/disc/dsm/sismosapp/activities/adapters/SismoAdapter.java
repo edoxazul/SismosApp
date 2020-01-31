@@ -84,6 +84,35 @@ public class SismoAdapter extends RecyclerView.Adapter<SismoViewHolder> {
     final SismoViewHolder sismoViewHolder = new SismoViewHolder(rowSismoBinding);
 
 
+
+    // Click in the row
+    rowSismoBinding.getRoot().setOnClickListener(view -> {
+
+      // The position
+      final int position = sismoViewHolder.getAdapterPosition();
+
+      // The id
+      final long id = sismoViewHolder.getItemId();
+      log.debug("Click! position: {}, id: {}.", position, Long.toHexString(id));
+
+      // Sismo to show
+      final Sismo sismo = this.theSismos.get(position);
+
+      log.debug("Link: {}.", sismo.getUrl());
+      if (sismo.getUrl() != null) {
+
+        // Open the browser
+        parent.getContext().startActivity(
+            new Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse(sismo.getUrl())
+            )
+        );
+      }
+
+    });
+
+
     return sismoViewHolder;
 
   }
