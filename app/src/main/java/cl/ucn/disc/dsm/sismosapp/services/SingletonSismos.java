@@ -41,7 +41,7 @@ public class SingletonSismos {
         sismo.state,
         sismo.utcTime,
         sismo.localTime,
-        sismo.chileanTime,
+        sismo.chilean_time,
         sismo.reference,
         sismo.magnitude,
         sismo.scale,

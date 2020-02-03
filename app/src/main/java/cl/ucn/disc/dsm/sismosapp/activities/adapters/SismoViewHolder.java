@@ -48,7 +48,7 @@ public class SismoViewHolder extends RecyclerView.ViewHolder {
     final String longitude = String.valueOf(sismo.getLongitude());
     final String scale = String.valueOf(sismo.getScale());
     final String source = String.valueOf(sismo.getSource());
-    final String timeutc = String.valueOf(sismo.getUtcTime());
+    final String chilean_time = String.valueOf(sismo.getChilean_time());
 
 
 
@@ -64,8 +64,8 @@ public class SismoViewHolder extends RecyclerView.ViewHolder {
         .append(scale).toString());
     this.binding.tvSource.setText(new StringBuilder().append("Source : ")
         .append(source).toString());
-    this.binding.tvChileanDate.setText(new StringBuilder().append("Time UTC : ")
-        .append(timeutc).toString());
+    this.binding.tvChileanDate.setText(new StringBuilder().append("Local Time : ")
+        .append(chilean_time).toString());
 
   }
 

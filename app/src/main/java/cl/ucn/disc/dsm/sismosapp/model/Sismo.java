@@ -33,7 +33,7 @@ public class Sismo {
   /**
    * Chilean Time.
    */
-  public String chileanTime;
+  public String chilean_time;
   /**
    * The Reference.
    */
@@ -78,7 +78,7 @@ public class Sismo {
    * @param state       ,the state.
    * @param utcTime     ,the utc time of the quake.
    * @param localTime   ,the localTime of the quake.
-   * @param chileanTime ,the chilean Time of the quake.
+   * @param chilean_time ,the chilean Time of the quake.
    * @param reference   ,the reference.
    * @param magnitude   ,the magnitude of the quake.
    * @param scale       ,the scale of the quake.
@@ -89,13 +89,13 @@ public class Sismo {
    * @param url         ,the url of the quake.
    * @param source      ,the source of the quake.
    */
-  public Sismo(Integer state, String utcTime, String localTime, String chileanTime,
+  public Sismo(Integer state, String utcTime, String localTime, String chilean_time,
       String reference, Float magnitude, String scale, Float latitude, Float longitude,
       Float depth, Long id, String url, String source) {
     this.state = state;
     this.utcTime = utcTime;
     this.localTime = localTime;
-    this.chileanTime = chileanTime;
+    this.chilean_time = chilean_time;
     this.reference = reference;
     this.magnitude = magnitude;
     this.scale = scale;
@@ -128,7 +128,7 @@ public class Sismo {
    * Get the local Time.
    * @return local time.
    */
-  public String getLocalTime() {
+  public String getLocalTime () {
     return localTime;
   }
 
@@ -136,8 +136,8 @@ public class Sismo {
    * Get the Chilean time.
    * @return Chilean time.
    */
-  public String getChileanTime() {
-    return chileanTime;
+  public String getChilean_time () {
+    return chilean_time;
   }
 
   /**

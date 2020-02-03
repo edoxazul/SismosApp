@@ -37,6 +37,7 @@ public class SismosServiceTest {
 @Test
 public void testGetSismosApi(){
 
+final int limit = 15;
 
     log.debug("Testing the SismosApiService, requesting Sismos.");
 
@@ -44,7 +45,7 @@ public void testGetSismosApi(){
   final SismosService sismosService = new SismosApiService();
 
   // The List of Sismos.
-  final List<Sismo> sismos = sismosService.getSismos();
+  final List<Sismo> sismos = sismosService.getSismos(limit);
 
     Assertions.assertNotNull(sismos);
     //Assertions.assertEquals(sismos.size(), size, "Error de tamanio");
